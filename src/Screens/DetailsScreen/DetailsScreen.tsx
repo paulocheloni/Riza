@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 import { Container, ContainerText, TextNamePoster } from "./DetailsScreen.styles";
-import { ActivityIndicator, View } from "react-native";
+import { ActivityIndicator, Text, View } from "react-native";
 import { usePostController } from "./DetailsScreen.controller";
 import Avatar from "../../components/Avatar/Avatar";
 import {
@@ -10,6 +10,7 @@ import {
   PostImage,
 } from "../../components/PostCard/PostCard.styles";
 import { Name } from "../../components/Header/Header.styles";
+import dayjs from "dayjs";
 export default function DetailsScreen() {
   const { post } = usePostController();
 
@@ -60,6 +61,8 @@ export default function DetailsScreen() {
             </Name>
             <TextNamePoster testID="name">{post?.Post?.Name}</TextNamePoster>
           </View>
+          <Text>{dayjs(post?.Post?.DateCreated, 'MM/DD/YYYY').fromNow()}</Text>
+
           <Description>{post?.Post?.Desc}</Description>
         </ContainerText>
       </View>

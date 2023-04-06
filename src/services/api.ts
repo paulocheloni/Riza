@@ -42,6 +42,7 @@ const createInstance = (baseURL: string ): any => {
         return instance
     }
 
- export const instance = createInstance(process.env.URL_BASE || '') as AxiosInstance
+export const instance = createInstance('http://dev1.riza.network:8000/api/test1_userLogView/NO_SESSION/page=1') as AxiosInstance
+
 
  

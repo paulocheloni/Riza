@@ -8,19 +8,20 @@ import {
   TextNamePoster,
   ContainerText,
 } from "./PostCard.styles";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import Avatar from "../Avatar/Avatar";
 import { usePostStore } from "../../store/post/post.store";
 import { PostCardProps } from "@components/PostCard/type";
 import React from "react"; 
 import { PostContent } from "src/services/posts/post.request.props";
+import { Text } from "react-native";
+import dayjs from "dayjs";
 
 export default function PostCard({ item, data, image }: PostCardProps) {
   const {setPost} = usePostStore() as unknown as {setPost: (item: PostContent) => void}
 
-  console.log(data)
-const date = new Date(Date.now() - data.DaysAgo * 24 * 60 * 60 * 1000);
-const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+  
+
 
   return (
     <Container
@@ -53,8 +54,8 @@ const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}
           </Name>
           <TextNamePoster testID="name">{data?.Name}</TextNamePoster>
           </View>
+          <Text>{dayjs(data.DateCreated, 'MM/DD/YYYY').fromNow()}</Text>
           <Description>{data?.Desc}</Description>
-          <Text>{}</Text>
         </ContainerText>
       </ContainerPoster>
     </Container>

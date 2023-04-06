@@ -17,7 +17,6 @@ export const usePostStore: PostStore = create((set) => ({
             const posts = await getAllPost() as unknown as Post[];
             set({ posts: posts });
         } catch (error) {
-            console.log(error);
         }
         finally {
             set({ loading: false });

@@ -12,7 +12,7 @@ describe('PostCard', () => {
         LastName: 'Doe',
         Name: 'My Post',
         Desc: 'My post description' as string,
-        DaysAgo: 1,  
+        Datecreated: '2021-01-01' as string,  
     } ,
     Files: {
         FileTop: {

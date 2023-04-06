@@ -9,6 +9,7 @@ import React from "react";
 export default function PostScreen() {
   const { posts } = usePostController();
 
+
   return (
     <Container>
       <Header />
