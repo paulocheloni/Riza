@@ -46,7 +46,7 @@ export default function DetailsScreen() {
           )}
           <ActivityIndicator
             size="large"
-            color="#0000ff"
+            color="gray"
             style={{
               position: "absolute",
               zIndex: 1,
@@ -61,7 +61,7 @@ export default function DetailsScreen() {
             </Name>
             <TextNamePoster testID="name">{post?.Post?.Name}</TextNamePoster>
           </View>
-          <Text>{dayjs(post?.Post?.DateCreated, 'MM/DD/YYYY').fromNow()}</Text>
+         { post?.Post?.DateCreated && <Text>{dayjs(post?.Post?.DateCreated, 'MM/DD/YYYY').fromNow()}</Text>}
 
           <Description>{post?.Post?.Desc}</Description>
         </ContainerText>
