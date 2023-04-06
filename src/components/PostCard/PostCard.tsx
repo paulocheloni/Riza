@@ -8,7 +8,7 @@ import {
   TextNamePoster,
   ContainerText,
 } from "./PostCard.styles";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import Avatar from "../Avatar/Avatar";
 import { usePostStore } from "../../store/post/post.store";
 import { PostCardProps } from "@components/PostCard/type";
@@ -17,6 +17,10 @@ import { PostContent } from "src/services/posts/post.request.props";
 
 export default function PostCard({ item, data, image }: PostCardProps) {
   const {setPost} = usePostStore() as unknown as {setPost: (item: PostContent) => void}
+
+  console.log(data)
+const date = new Date(Date.now() - data.DaysAgo * 24 * 60 * 60 * 1000);
+const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
 
   return (
     <Container
@@ -50,6 +54,7 @@ export default function PostCard({ item, data, image }: PostCardProps) {
           <TextNamePoster testID="name">{data?.Name}</TextNamePoster>
           </View>
           <Description>{data?.Desc}</Description>
+          <Text>{}</Text>
         </ContainerText>
       </ContainerPoster>
     </Container>
