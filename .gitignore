@@ -1,6 +1,10 @@
 node_modules/
 .expo/
 dist/
+
+# Local environment. Names live in .env.example; values stay on the machine.
+.env
+.env*.local
 npm-debug.*
 *.jks
 *.p8

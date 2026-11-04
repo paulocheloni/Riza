@@ -1,6 +1,6 @@
 import Header from "../../components/Header/Header";
 import { Container, Content, ListEmpty } from "./PostScreen.styles";
-import { ActivityIndicator, FlatList, View } from "react-native";
+import { ActivityIndicator, FlatList } from "react-native";
 import PostCard from "../../components/PostCard/PostCard";
 import { usePostController } from "./PostScreen.controller";
 import Story from "../../components/Story/Story";

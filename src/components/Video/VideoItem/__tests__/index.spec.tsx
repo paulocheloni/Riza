@@ -1,18 +1,6 @@
 import { fireEvent, render, waitFor } from "@testing-library/react-native";
 import React from "react";
-import { useHomeScreenController } from "../../../../Screens/HomeScreen/HomeScreen.controller";
 import { VideoItem } from "../index";
-
-const mockUseHomeScreenController = useHomeScreenController as jest.MockedFunction<typeof useHomeScreenController>;
-
-jest.mock("@Screens/HomeScreen/HomeScreen.controller", () => ({
-  useHomeScreenController: jest.fn(() => ({
-    setVisible: jest.fn(),
-    loading: null,
-    setUrl: jest.fn(),
-    setLoading: jest.fn()
-  }))
-}));
 
 describe("VideoItem", () => {
   const video = {

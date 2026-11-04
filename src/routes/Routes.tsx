@@ -34,8 +34,8 @@ export function MyTabs() {
               <Entypo name="home" size={24} color={color} testID="home-icon"/>
             ),
           }}
-          listeners={( ) => ({
-            tabPress: e => {
+          listeners={() => ({
+            tabPress: () => {
               setPost({})
             }
           })}
@@ -55,8 +55,8 @@ export function MyTabs() {
               />
             ),
           }}
-          listeners={( ) => ({
-            tabPress: e => {
+          listeners={() => ({
+            tabPress: () => {
               setPost({})
             }
           })}

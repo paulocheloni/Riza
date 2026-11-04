@@ -1,4 +1,4 @@
-interface Post {
+export interface Post {
     PostId: string;
     FirstName: string;
     LastName: string;

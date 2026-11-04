@@ -1,14 +1,11 @@
 import React from 'react';
 import { render, } from '@testing-library/react-native';
-import { Video } from 'expo-av';
 import { ModalPlayerVideo } from '../Modal';
 
 
 describe('ModalPlayerVideo', () => {
   const mockSetVisible = jest.fn();
   const mockSetCurrentId = jest.fn();
-  const mockRef = React.createRef() as React.MutableRefObject<Video>;
-  const mockIsUrl = 'https://example.com/video.mp4';
 
   beforeEach(() => {
     jest.clearAllMocks();

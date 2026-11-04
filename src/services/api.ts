@@ -1,4 +1,5 @@
 import axios, { AxiosInstance } from 'axios'
+import { URL_BASE } from 'react-native-dotenv'
 import { IAxiosRequestConfig, IAxiosResponse } from './api.props'
 
 
@@ -42,7 +43,13 @@ const createInstance = (baseURL: string ): any => {
         return instance
     }
 
-export const instance = createInstance('http://dev1.riza.network:8000/api/test1_userLogView/NO_SESSION/page=1') as AxiosInstance
+/**
+ * Posts API client. `URL_BASE` comes from `.env` through react-native-dotenv
+ * (see `.env.example`). An empty value is left in place so the app can still
+ * boot; `getAllPost` reports the missing configuration instead of calling a
+ * relative URL.
+ */
+export const instance = createInstance((URL_BASE ?? '').trim()) as AxiosInstance
 
 
  

@@ -1,3 +1,5 @@
+import { Post } from "../../Screens/PostScreen/Post";
+
 export type IPostResponse = {
         payload: {
             Posts: PostContent[]
