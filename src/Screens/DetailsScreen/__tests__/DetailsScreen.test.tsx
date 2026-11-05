@@ -3,21 +3,6 @@ import { render, waitFor } from '@testing-library/react-native';
 import DetailsScreen from '../DetailsScreen';
 
 describe('DetailsScreen', () => {
-  const post = {
-    Post: {
-      FirstName: 'John',
-      LastName: 'Doe',
-      Name: 'Test post',
-      Desc: 'Test description',
-    },
-    Files: {
-      FileTop: {
-        ThumbURL: 'https://test.com/thumb.png',
-        FileURL: 'https://test.com/post.png',
-      },
-    },
-  };
-
   it('should render the post details', async () => {
     const { getByTestId, queryByTestId } = render(
       <DetailsScreen />,

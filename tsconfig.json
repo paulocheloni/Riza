@@ -22,8 +22,7 @@
       "react",
       "react-native",
       "jest",
-      "@types/styled-components-react-native",
-      "styled-components/native",
+      "styled-components-react-native",
       "node"
     ]
   },

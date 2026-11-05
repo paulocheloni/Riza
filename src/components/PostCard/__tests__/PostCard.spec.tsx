@@ -11,8 +11,8 @@ describe('PostCard', () => {
         FirstName: 'John',
         LastName: 'Doe',
         Name: 'My Post',
-        Desc: 'My post description' as string,
-        Datecreated: '2021-01-01' as string,  
+        Desc: 'My post description',
+        DateCreated: '01/01/2021',
     } ,
     Files: {
         FileTop: {
@@ -25,15 +25,15 @@ describe('PostCard', () => {
   const image = 'https://example.com/my-image.jpg';
 
   test('renders correctly', () => {
-    const { getByTestId } = render(
+    const { getByTestId, getByText } = render(
       <PostCard item={item} data={data} image={image} />
     );
 
     expect(getByTestId('post-card')).toBeDefined();
-    expect(getByTestId('full-name')).toBeDefined();
-    expect(getByTestId('name')).toBeDefined();
-   
-    expect(getByTestId('post-image')).toBeDefined();
+    expect(getByTestId('full-name').props.children.join('')).toBe('John Doe');
+    expect(getByTestId('name').props.children).toBe('My Post');
+    expect(getByTestId('post-image').props.source.uri).toBe(image);
+    expect(getByText('My post description')).toBeTruthy();
    
   });
 

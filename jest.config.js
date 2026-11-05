@@ -5,9 +5,11 @@ module.exports = {
   },
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   moduleNameMapper: {
     "^@components/(.*)$": "<rootDir>/src/components/$1",
     "^@Screens/(.*)$": "<rootDir>/src/Screens/$1",
-    "^@utils/(.*)$": "<rootDir>/src/utils/$1"	
+    "^@utils/(.*)$": "<rootDir>/src/utils/$1",
+    "^react-native-dotenv$": "<rootDir>/jest/react-native-dotenv.js"
   }
 };

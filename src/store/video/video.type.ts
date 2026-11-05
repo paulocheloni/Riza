@@ -1,3 +1,8 @@
 import { StoreApi, UseBoundStore } from "zustand";
 
-export type VideoStore = UseBoundStore<Readonly<StoreApi<{ url: string }>>>
+export type VideoState = {
+    url: string;
+    setUrlVideo: (url: string) => void;
+};
+
+export type VideoStore = UseBoundStore<Readonly<StoreApi<VideoState>>>;

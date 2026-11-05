@@ -9,6 +9,7 @@ export default function Avatar({avatarUrl, userName, lastName}: AvatarProps) {
   return (
     <Container >
         <AvatarImage
+          testID="avatar-image"
           source={{
             uri:avatarUrl,
           }}

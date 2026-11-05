@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { getAllPost } from "../../services/posts/post.request";
 import { navigationRef } from "../../helpers/navigatorRef";
+import { Post } from "../../Screens/PostScreen/Post";
 import { PostContent } from "src/services/posts/post.request.props";
 import { PostStore } from "src/store/post/post.type";
 
@@ -17,6 +18,8 @@ export const usePostStore: PostStore = create((set) => ({
             const posts = await getAllPost() as unknown as Post[];
             set({ posts: posts });
         } catch (error) {
+            // A failed request leaves the previous list in place.
+            console.error(error);
         }
         finally {
             set({ loading: false });

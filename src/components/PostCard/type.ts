@@ -1,3 +1,4 @@
+import { Post } from "../../Screens/PostScreen/Post";
 import { PostContent } from "src/services/posts/post.request.props";
 
 export type PostCardProps = {

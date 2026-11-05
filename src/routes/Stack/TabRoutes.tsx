@@ -20,7 +20,7 @@ export function MyTabs() {
       component={HomeScreen}
       options={{
         tabBarLabel: "Home",
-        tabBarIcon: ({ color, size }) => (
+        tabBarIcon: () => (
           <Entypo name="home" size={24} color="black" />
         ),
       }}
@@ -30,7 +30,7 @@ export function MyTabs() {
       component={PostScreen}
       options={{
         tabBarLabel: "Post",
-        tabBarIcon: ({ color, size }) => (
+        tabBarIcon: () => (
           <MaterialCommunityIcons
             name="post-outline"
             size={24}
